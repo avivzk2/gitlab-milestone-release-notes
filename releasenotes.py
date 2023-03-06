@@ -11,7 +11,7 @@ from typing import Any
 
 
 def get_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description='Aviv Zaken')
+    parser = argparse.ArgumentParser(description='Gitlab Release Notes')
     parser.add_argument('group', type=str, help='Name of the Gitlab group (lower case)')
     parser.add_argument('milestone', type=str, help='Name of the milestone (lower case)')
     parser.add_argument('--server', type=str, help="Server's host (e.g. https://gitlab.com)")
@@ -91,7 +91,7 @@ def generate_release_notes(milestone: Any) -> str:
 
 if __name__ == '__main__':
     args = get_args()
-    print(args)
+    # print(args)
 
     gl = get_connection(args.server, args.token)
     milestone = get_milestone(gl, args.group, args.milestone)
